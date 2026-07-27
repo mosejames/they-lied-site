@@ -83,13 +83,14 @@
   }
   .clock {
     display: flex; justify-content: center; align-items: baseline;
-    flex-wrap: wrap; gap: clamp(10px, 3vw, 34px);
+    flex-wrap: nowrap; gap: clamp(4px, 2vw, 34px);
     margin-bottom: 14px;
+    width: 100%;
   }
-  .clock .unit { text-align: center; }
+  .clock .unit { text-align: center; flex: 0 0 auto; }
   .clock .val {
     font-family: "IBM Plex Mono", monospace; font-weight: 700;
-    font-size: clamp(3rem, 13vw, 10rem);
+    font-size: clamp(2rem, 11vw, 10rem);
     line-height: 1;
     color: var(--bone);
     font-variant-numeric: tabular-nums;
@@ -102,10 +103,11 @@
   }
   .clock .sep {
     font-family: "IBM Plex Mono", monospace; font-weight: 400;
-    font-size: clamp(2rem, 9vw, 7rem);
+    font-size: clamp(1.3rem, 6.5vw, 7rem);
     color: rgba(245,241,230,0.25);
     line-height: 1;
     transform: translateY(-6px);
+    flex: 0 0 auto;
   }
   .since {
     max-width: 880px; margin: 30px auto 0;
@@ -542,6 +544,10 @@
         <div class="spk">Heather Larson · Chicago Northwest</div>
         <div class="txt">Confirmed sending a cease-and-desist letter to force the company to remove her organization's name from its claimed client list.</div>
       </div>
+      <div class="line them">
+        <div class="spk">The paper trail</div>
+        <div class="txt">The complaint documentation is reported to run more than 100 pages, including emails from tourism organizations in Dunwoody, Roswell, Gwinnett County, Savannah, Augusta, Macon, and Dahlonega — each saying they were never clients of Destination Must Visit.</div>
+      </div>
       <div class="line">
         <div class="spk">What it tells you</div>
         <div class="txt">The company College Park's council chose — in Savannah, two days before the incumbent's contract expired — is publicly accused by named tourism executives of fabricating the very track record it was chosen on. The characterizations are theirs; the documents and the cease-and-desist are on the record.</div>
@@ -558,10 +564,16 @@
 
     <div class="status-board">
       <div class="status-row">
-        <div class="status-label">Attorney General's demand for explanation
-          <span class="sub">Letter from Sr. Asst. AG Kristen Settlemire · sent Jun 30, 2026 · 10-day response window</span>
+        <div class="status-label">Open-government lawsuit · Fulton County Superior Court
+          <span class="sub">Filed Jul 13, 2026 by Katie Corkren against seven officials individually · Open Meetings &amp; Open Records Act claims · resident-funded via GoFundMe</span>
         </div>
-        <div class="status-val red">Awaiting response</div>
+        <div class="status-val red">In court</div>
+      </div>
+      <div class="status-row">
+        <div class="status-label">Attorney General's demand for explanation
+          <span class="sub">Letter from Sr. Asst. AG Kristen Settlemire (AG Chris Carr's office) · sent Jun 30, 2026 · office continuing to seek answers on the latest allegations</span>
+        </div>
+        <div class="status-val red">Ongoing</div>
       </div>
       <div class="status-row">
         <div class="status-label">GHLA complaint · Hotel-Motel Tax Performance Review Board
@@ -589,8 +601,32 @@
       </div>
     </div>
 
+    <div class="exchange" style="margin-top: 40px;">
+      <div class="hdr">The other side · the city's position, in its own words</div>
+      <div class="line">
+        <div class="spk">City Attorney Winston Denmark</div>
+        <div class="txt">Calls the transparency complaints "meritless." Says the June 28 Special Called Meeting was publicly noticed, open to the public, and lawful, and argues that meeting outside city limits does not, on its own, violate the Open Meetings Act.</div>
+      </div>
+      <div class="line">
+        <div class="spk">The City of College Park</div>
+        <div class="txt">Has posted a public DMO FAQ defending its selection process and the RFP that produced it. The City itself and Mayor Bianca Motley Broom — who was not at the Savannah meeting — are not named as defendants in the lawsuit.</div>
+      </div>
+      <div class="line">
+        <div class="spk">Why this is here</div>
+        <div class="txt">This matter is now in court. The city's denial belongs on the record alongside the documents. Every claim on this page is sourced — and so is the city's response.</div>
+      </div>
+    </div>
+
     <div class="updates">
       <div class="chap-num" style="margin-bottom: 6px;">Update log</div>
+      <div class="update-item">
+        <span class="d">JUL 13 2026</span>
+        <span class="m">Katie Corkren files suit in Fulton County Superior Court against seven College Park officials individually — Councilmembers Carn, McKenzie, Arnold, and Gay, City Manager Michael Hicks, City Clerk Kelly Bogner, and City Attorney Winston Denmark — alleging Open Meetings Act and Open Records Act violations. Residents funded the filing through a GoFundMe. The City and Mayor Motley Broom are not named.</span>
+      </div>
+      <div class="update-item">
+        <span class="d">JUL 2026</span>
+        <span class="m">City Attorney Winston Denmark calls the complaints "meritless" and defends the June 28 meeting as noticed, open, and lawful; the city posts a public DMO FAQ. The Attorney General's office says it is continuing to seek answers on the latest allegations.</span>
+      </div>
       <div class="update-item">
         <span class="d">JUL 02 2026</span>
         <span class="m">SaportaReport publishes accounts from metro tourism officials disputing the winning vendor's claimed client list; Chicago Northwest confirms a cease-and-desist.</span>
@@ -612,7 +648,7 @@
   <div class="narrow">
     <div class="meta">Sources · Public Record</div>
     <div class="src">
-      The February 5, 2024 minutes quotes are verbatim from the City of College Park's own published agenda packets (Feb 5, 2024 Regular Session minutes, published in the Mar 4, 2024 packet, Regular Session p. 70). The 2026 events are sourced to: SaportaReport (Savannah meeting coverage; Attorney General correspondence; July 2, 2026 client-list reporting), CBS Atlanta and WJCL (Savannah meeting and AG response), the Georgia Hotel &amp; Lodging Association's published letters and complaint, the ATL Airport District and Destination College Park published annual reports, the City of College Park's posted RFP bid packages, and the city's own YouTube recordings of the June 15 and June 28, 2026 meetings. Characterizations of the winning vendor's client list are quoted from named tourism officials as published; this page makes no allegation beyond what those documents and statements establish. All records cited are public and obtainable through the Georgia Open Records Act.
+      The February 5, 2024 minutes quotes are verbatim from the City of College Park's own published agenda packets (Feb 5, 2024 Regular Session minutes, published in the Mar 4, 2024 packet, Regular Session p. 70). The 2026 events are sourced to: SaportaReport (Savannah meeting coverage; Attorney General correspondence; July 2, 2026 client-list reporting), CBS Atlanta and WJCL (Savannah meeting and AG response), the Georgia Hotel &amp; Lodging Association's published letters and complaint, the ATL Airport District and Destination College Park published annual reports, the City of College Park's posted RFP bid packages, and the city's own YouTube recordings of the June 15 and June 28, 2026 meetings. Characterizations of the winning vendor's client list are quoted from named tourism officials as published; this page makes no allegation beyond what those documents and statements establish. The July 13, 2026 lawsuit (Corkren v. Carn et al., Fulton County Superior Court) and the City of College Park's public DMO FAQ and City Attorney's statements are reflected here for completeness — the city denies the allegations and its contested filings remain to be resolved in court and before the state. All records cited are public and obtainable through the Georgia Open Records Act.
     </div>
     <div class="closing">
       Thirteen years of work was ended by a company thirty-three days old, in a vote held 240 miles from the people it affects. The clock at the top of this page keeps counting either way.
